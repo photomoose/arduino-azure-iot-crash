@@ -21,3 +21,28 @@ Info: --> STRING_delete
 Info: address of STRING* is 53197
 Info: about to access value->s
 ```
+
+### Dependencies
+```
+arduino-cli lib install WiFi101
+arduino-cli lib install AzureIoTHub
+arduino-cli lib install AzureIoTUtility
+arduino-cli lib install AzureIoTProtocol_MQTT
+arduino-cli lib install RTCZero
+arduino-cli lib install NTPClient
+```
+
+### Build
+```
+arduino-cli compile --fqbn adafruit:samd:adafruit_feather_m0 -v app
+```
+
+### Deploy
+```
+arduino-cli upload -p /dev/cu.usbmodem14301 --fqbn adafruit:samd:adafruit_feather_m0 app
+```
+
+### Monitor Serial
+```
+screen /dev/cu.usbmodem14301 115200
+```
